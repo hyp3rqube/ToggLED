@@ -35,11 +35,10 @@ void loop()
   if (lastButtonState == HIGH && currentButtonState == LOW)
   {
     Serial.println("Switch is pressed");
+    
     ledPower = !ledPower;
     digitalWrite(ledPin, ledPower); //toggle led state
 
-  /*
-   * For debugging ledPower
     if (ledPower == HIGH)
     {
       Serial.println("LED is ON");
@@ -48,7 +47,6 @@ void loop()
     {
       Serial.println("LED is OFF");
     }
-    */
     
     delay(debounceDelay); //wait to prevent duplicatic signals from switch bounce.
   }
